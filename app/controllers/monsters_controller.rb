@@ -1,5 +1,5 @@
 class MonstersController < ApplicationController
-  before_action only: [:show, :edit, :update, :destroy]
+  before_action only: [:index, :show, :new, :create,]
 
   def index
     @monsters = Monster.all
