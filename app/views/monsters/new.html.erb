@@ -1,0 +1,15 @@
+<div class="container mt-4 p-4 ">
+  <div class="row justify-content-center">
+    <div class="col-md-4 border shadow-sm mt-4 p-4">
+      <%= simple_form_for [@user, @monster] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :price %>
+      <% f.association :user %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
