@@ -1,1 +1,16 @@
+<div class="container">
+<div class="row">
+<div class="col">
+
 <h1> The Monster <h1>
+<p><%= @monster.name %></p>
+<p><%= @monster.description %></p>
+<p><%= @monster.price %></p>
+<%= turbo_frame_tag "new_booking" do %>
+  <%= link_to "Book Now", new_user_booking_path(@monster), method: :post, class: "btn btn-primary" %>
+<% end %>
+
+</div>
+</div>
+
+</div>

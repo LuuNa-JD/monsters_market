@@ -2,22 +2,27 @@ class MonstersController < ApplicationController
   before_action only: [:index, :show, :new, :create]
 
   def index
+    @user = current_user
     @monsters = Monster.all
 
   end
 
   def show
+    @user = current_user
     @monster = Monster.find(params[:id])
+    @booking = Booking.new(user: @user, monster: @monster)
   end
 
   def new
     @user = current_user
-    @monster = Monster.new
+    @monster = Monster.new(user: @user)
 
   end
 
   def create
+    @user = current_user
     @monster = Monster.new(monster_params)
+    @monster.user = @user
     if @monster.save
       redirect_to monster_path(@monster)
     else
@@ -45,6 +50,6 @@ class MonstersController < ApplicationController
   private
 
   def monster_params
-    params.require(:monster).permit(:name, :description, :price, :user_id, :photo)
+    params.require(:monster).permit(:name, :description, :price, :photo)
   end
 end
