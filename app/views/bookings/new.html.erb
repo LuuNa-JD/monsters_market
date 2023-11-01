@@ -1,6 +1,6 @@
 <h1>Nouvelle Réservation de monstre</h1>
 
-<%= form_for @bookings do |f| %>
+<%= form_for @booking do |f| %>
 
   <div class="form-group">
     <%= f.label :reservation_date, "Date de Réservation" %>
@@ -15,4 +15,4 @@
   <%= f.submit "Créer Réservation", class: "btn btn-primary" %>
 <% end %>
 
-<%= link_to "Retour aux Réservations", bookings_path, class: "btn btn-secondary" %>
+<%= link_to "Retour aux Réservations", user_bookings_path, class: "btn btn-secondary" %>
