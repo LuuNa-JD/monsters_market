@@ -19,7 +19,7 @@ class MonstersController < ApplicationController
   def create
     @monster = Monster.new(monster_params)
     if @monster.save
-      redirect_to @monster_path(@monster)
+      redirect_to monster_path(@monster)
     else
       render :new, status: :unprocessable_entity
     end
