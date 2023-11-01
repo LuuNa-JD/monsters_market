@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :monsters, only: [:index, :show]
 
+
   resources :users do
     resources :monsters, only: [:new, :create]
     resources :bookings, only: [:new, :create, :index, :edit, :update]
