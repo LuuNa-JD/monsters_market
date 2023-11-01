@@ -1,1 +1,10 @@
 <h1> ma liste de monstres </h1>
+
+
+<% @monsters.each do |monster| %>
+  <div class="monster-card">
+    <h2><%= monster.name %></h2>
+    <p>Price: $<%= monster.price %></p>
+    <p>Hosted by: <%= monster.user.full_name %></p>
+  </div>
+<% end %>
