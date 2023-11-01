@@ -10,7 +10,9 @@ class MonstersController < ApplicationController
   end
 
   def new
+    @user = current_user
     @monster = Monster.new
+
   end
 
   def create
@@ -42,6 +44,6 @@ class MonstersController < ApplicationController
   private
 
   def monster_params
-    params.require(:monster).permit(:name, :description, :price, :user_id)
+    params.require(:monster).permit(:name, :description, :price, :user)
   end
 end
