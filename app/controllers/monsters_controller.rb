@@ -3,6 +3,7 @@ class MonstersController < ApplicationController
 
   def index
     @monsters = Monster.all
+
   end
 
   def show
@@ -10,7 +11,9 @@ class MonstersController < ApplicationController
   end
 
   def new
+    @user = current_user
     @monster = Monster.new
+
   end
 
   def create
