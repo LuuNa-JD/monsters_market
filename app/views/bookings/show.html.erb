@@ -1,0 +1,12 @@
+<div class="container mt-5">
+  <h1>Détails de la Réservation</h1>
+  <div class="card mt-3">
+    <div class="card-body">
+      <h5 class="card-title">Réservation #<%= @booking.id %></h5>
+      <p class="card-text">Date de Réservation: <%= @booking.reservation_date.strftime("%d %b %Y") %></p>
+      <p class="card-text">Client: <%= @booking.client_name %></p>
+      <!-- Ajoutez d'autres détails de réservation au besoin -->
+    </div>
+  </div>
+  <%= link_to "Retour à la liste des réservations", bookings_path, class: "btn btn-secondary mt-3" %>
+</div>
