@@ -1,1 +1,148 @@
 // Specific CSS for your home-page
+body {
+  background-color: #111;
+  color: #fff;
+  font-family: 'Creepster', cursive;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.container-home {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #222;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border: 2px solid #c00;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.title-home {
+  font-size: 36px;
+  margin: 20px 0;
+  color: #c00;
+}
+
+.slogan-home {
+  font-size: 30px;
+  margin: 10px 0;
+
+}
+
+.start-button {
+  margin-top: 30px;
+}
+
+.btn-start-adventure {
+  display: inline-block;
+  padding: 20px 40px;
+  font-size: 24px;
+  background-color: #c00;
+  color: #fff;
+  border: 2px solid #c00;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-start-adventure:hover {
+  background-color: #800;
+  cursor: pointer;
+}
+
+.cards-home {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.card-category-home {
+  flex: 0 1 calc(30% - 10px);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+  font-size: 20px;
+  border: 2px solid #c00;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+.card-category-home:hover {
+  background-color: #800;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Creepster&display=swap');
+
+.navbar-lewagon {
+  background-color: #ffffff !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+.navbar-brand {
+  font-family: 'Creepster', cursive !important;
+  color: #c00 !important;
+}
+
+.navbar-toggler-icon {
+  background-color: #c00 !important;
+}
+
+.nav-link {
+  color: #000000 !important;
+}
+
+.nav-link:hover {
+  color: #c00 !important;
+}
+
+.avatar {
+  border: 2px solid #c00 !important;
+  border-radius: 50% !important;
+  background-color: #c00 !important;
+}
+
+.dropdown-menu {
+  background-color: #111 !important;
+}
+
+.dropdown-item {
+  color: #c00 !important;
+}
+
+
+.title-navbar {
+  font-family: 'Creepster', cursive !important;
+  color: #c00 !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+  font-size: 24px !important;
+  margin-left: 5px;
+  border: 2px solid #c00 !important;
+  padding: 5px 10px !important;
+  border-radius: 10px !important;
+  background-color: #111 !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+.title-navbar:hover {
+  color: #800 !important;
+}
+
+
+.scrolling-message {
+  color: #c00 !important;
+  font-size: 50px !important;
+  font-family: 'Creepster', cursive !important;
+  text-align: center !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  white-space: nowrap !important;
+  animation: scrollMessage 5s linear infinite alternate !important;
+}
