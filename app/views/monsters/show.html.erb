@@ -6,16 +6,38 @@
     <title>Monster Details</title>
 </head>
 <body>
-    <div class="container-monster">
-        <img class="monster-image" src="<%= cl_image_path @monster.photo.key, width: 300, height: 300, crop: :fill %>" alt="Monster Image">
-        <h1 class="monster-title"><%= @monster.name %></h1>
-        <p class="monster-description"><%= @monster.description %></p>
-        <p class="monster-price">Price: <%= @monster.price %>$ per week</p>
-        <div class="book-button">
-            <%= turbo_frame_tag "new_booking" do %>
-                <%= link_to "Book Now", new_user_booking_path(@monster), method: :post, class: "btn btn-primary" %>
-            <% end %>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img class="monster-image img-fluid" src="<%= cl_image_path @monster.photo.key, width: 300, height: 300, crop: :fill %>" alt="Monster Image">
+            </div>
+            <div class="col-md-6">
+                <h1 class="monster-title"><%= @monster.name %></h1>
+                <p class="monster-description"><%= @monster.description %></p>
+                <p class="monster-price">Price: <%= @monster.price %>$ per week</p>
+                <div class="book-button">
+                    <%= link_to "Soumettre une Réservation", new_booking_path, class: "btn btn-success" %>
+                </div>
+            </div>
+        </div>
+
+        <%= form_for([monster, Booking.new], html: { class: "my-4" }) do |f| %>
+            <h3>Formulaire de Réservation</h3>
+            <div class="form-group">
+                <%= f.label :date %>
+                <%= f.text_field :date, type: 'date', class: "form-control" %>
+            </div>
+            <!-- Ajoutez d'autres champs du formulaire ici -->
+            <%= f.submit "Réserver ce monstre", class: "btn btn-primary" %>
+        <% end %>
+
+        <div class="reservation-dates my-4">
+            <h3>Dates de réservation pour ce monstre :</h3>
+            <ul class="list-group">
+                <% @monster.bookings.each do |booking| %>
+                    <li class="list-group-item"><%= booking.date %></li>
+                <% end %>
+            </ul>
         </div>
     </div>
-</body>
 </html>
