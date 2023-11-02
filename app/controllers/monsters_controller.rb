@@ -1,4 +1,5 @@
 class MonstersController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   before_action only: [:index, :show, :new, :create]
 
   def index
