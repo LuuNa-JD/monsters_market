@@ -1,16 +1,21 @@
-<div class="container">
-<div class="row">
-<div class="col">
-
-<h1> The Monster <h1>
-<p><%= @monster.name %></p>
-<p><%= @monster.description %></p>
-<p><%= @monster.price %></p>
-<%= turbo_frame_tag "new_booking" do %>
-  <%= link_to "Book Now", new_user_booking_path(@monster), method: :post, class: "btn btn-primary" %>
-<% end %>
-
-</div>
-</div>
-
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monster Details</title>
+</head>
+<body>
+    <div class="container-monster">
+        <img class="monster-image" src="<%= cl_image_path @monster.photo.key, width: 300, height: 300, crop: :fill %>" alt="Monster Image">
+        <h1 class="monster-title"><%= @monster.name %></h1>
+        <p class="monster-description"><%= @monster.description %></p>
+        <p class="monster-price">Price: <%= @monster.price %>$ per week</p>
+        <div class="book-button">
+            <%= turbo_frame_tag "new_booking" do %>
+                <%= link_to "Book Now", new_user_booking_path(@monster), method: :post, class: "btn btn-primary" %>
+            <% end %>
+        </div>
+    </div>
+</body>
+</html>
