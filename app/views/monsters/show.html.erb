@@ -16,14 +16,13 @@
                 <p class="monster-description"><%= @monster.description %></p>
                 <p class="monster-price">Price: <%= @monster.price %>$ per week</p>
                 <div class="book-button">
-                    <%= link_to "Lets Book", new_user_booking_path(@monster), class: "btn btn-success" %>
+                  <%= form_for @booking, url: user_new_booking_path(@booking), method: :post do |f| %>
+                    <%= f.hidden_field :monster_id, value: @monster.id %>
+                    <%= f.submit "Let's Book", class: "btn btn-success" %>
+                  <% end %>
                 </div>
             </div>
         </div>
     </div>
-    <%= form_for([@user, @booking], html: { class: "my-4" }) do |f| %>
-        <h3>Formulaire de Réservation</h3>
-        <%= f.submit "Réserver ce monstre", class: "btn btn-primary" %>
-    <% end %>
 </body>
 </html>
