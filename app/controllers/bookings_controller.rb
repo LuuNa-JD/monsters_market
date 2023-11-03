@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(user: @user, monster: @monster)
 
     if @booking.save
-      redirect_to bookings_path
+      redirect_to bookings_path, notice: "Demande de réservation créée avec succès"
     else
       render :new
     end
