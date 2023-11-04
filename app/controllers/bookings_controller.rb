@@ -31,11 +31,13 @@ class BookingsController < ApplicationController
 
   def edit
     # The before_action :find_booking already finds the booking, so you don't need to find it again here.
+    @user = @booking.user
+    @monster = @booking.monster
   end
 
   def update
     if @booking.update(booking_params)
-      redirect_to bookings_path
+      redirect_to user_bookings_path
     else
       render :edit
     end
@@ -44,7 +46,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:monster_id, :user_id)
+    params.require(:booking).permit(:monster_id, :user_id, :approved)
   end
 
   def find_booking
