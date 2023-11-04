@@ -11,6 +11,7 @@
             <th>ID</th>
             <th>Date de Réservation</th>
             <th>Client</th>
+            <th>Monster</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -20,6 +21,7 @@
               <td><%= booking.id %></td>
               <td><%= booking.created_at %></td>
               <td><%= booking.user.first_name %></td>
+              <td><%= booking.monster.name %></td>
               <td>
 
                 <!-- Button trigger modal -->
