@@ -9,17 +9,19 @@ class BookingsController < ApplicationController
 
   def create
     @user = current_user
-    @booking = Booking.new(user: @user, monster: @monster)
 
+    @monster = Monster.find(params[:booking][:monster_id])
+    @booking = Booking.new(user: @user, monster: @monster)
     if @booking.save
-      redirect_to bookings_path, notice: "Demande de réservation créée avec succès"
+      redirect_to user_bookings_path, notice: "Demande de réservation créée avec succès"
     else
-      render :new
+
+      render 'monsters/show', status: :unprocessable_entity
     end
   end
 
   def show
-
+    @booking = Booking.find(params[:id])
   end
 
   def index
