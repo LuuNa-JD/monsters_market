@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :monsters, only: [:new, :create]
     resources :bookings, only: [:new, :index, :edit, :update]
-    post "/users/user_id/bookings", to: "bookings#create", as: "user_new_booking"
+    post "/bookings", to: "bookings#create", as: "new_booking"
   end
 
 end

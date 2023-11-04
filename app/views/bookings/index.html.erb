@@ -15,12 +15,11 @@
           <% @bookings.each do |booking| %>
             <tr>
               <td><%= booking.id %></td>
-              <td><%= booking.reservation_date.strftime("%d %b %Y") %></td>
+              <td></td>
               <td><%= booking.user.first_name %></td>
               <td>
-                <%= link_to "Détails", booking, class: "btn btn-primary btn-sm" %>
-                <%= link_to "Éditer", edit_booking_path(booking), class: "btn btn-warning btn-sm" %>
-                <%= link_to "Supprimer", booking, method: :delete, data: { confirm: "Êtes-vous sûr ?" }, class: "btn btn-danger btn-sm" %>
+                <%= link_to "Détails", user_bookings_path, class: "btn btn-primary btn-sm" %>
+
               </td>
             </tr>
           <% end %>
@@ -40,13 +39,13 @@
           <% @bookings.each do |booking| %>
             <tr>
               <td><%= booking.id %></td>
-              <td><%= booking.reservation_date.strftime("%d %b %Y") %></td>
-              <td><%= booking.monster.name %></td>
+              <td></td>
+              <td><%= booking.user.first_name %></td>
 
             </tr>
           <% end %>
         </tbody>
       </table>
     <% end %>
-  <%= link_to "Nouvelle Réservation", new_user_booking_path(@user), class: "btn btn-success" %>
+  <%= link_to "Monsters", monsters_path, class: "btn btn-success" %>
 </div>
