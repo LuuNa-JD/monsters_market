@@ -1,3 +1,6 @@
+
+<%= javascript_include_tag "https://cdn.hotwired.dev/turbo-streams.min.js" %>
+
 <h1>Vos réservations</h1>
 <div class="container">
   <h1 class="mt-5">Vos Réservations</h1>
@@ -8,18 +11,40 @@
             <th>ID</th>
             <th>Date de Réservation</th>
             <th>Client</th>
-            <th>Actions</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
           <% @bookings.each do |booking| %>
             <tr>
               <td><%= booking.id %></td>
-              <td></td>
+              <td><%= booking.created_at %></td>
               <td><%= booking.user.first_name %></td>
               <td>
-                <%= link_to "Détails", user_bookings_path, class: "btn btn-primary btn-sm" %>
 
+                <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<%=booking.id%>">
+                    Approbation
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal<%=booking.id%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <%= render "edit", booking: booking %>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
               </td>
             </tr>
           <% end %>
@@ -32,20 +57,27 @@
             <th>ID</th>
             <th>Date de Réservation</th>
             <th>Monster</th>
-
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
           <% @bookings.each do |booking| %>
             <tr>
               <td><%= booking.id %></td>
-              <td></td>
-              <td><%= booking.user.first_name %></td>
-
+              <td><%= booking.created_at %></td>
+              <td><%= booking.monster.name %></td>
+              <td>
+                  <% if booking.approved%>
+                    Accepter
+                  <% elsif booking.approved == nil%>
+                    En attente
+                  <% else %>
+                  Refuser
+                  <% end %>
+              </td>
             </tr>
           <% end %>
         </tbody>
       </table>
     <% end %>
   <%= link_to "Monsters", monsters_path, class: "btn btn-success" %>
-</div>

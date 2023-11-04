@@ -15,7 +15,7 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
+        <% if user_signed_in? && current_user.vendor %>
           <li class="nav-item active">
              <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
@@ -34,12 +34,33 @@
               <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "dropdown-item" %>
             </div>
           </li>
+        <% elsif user_signed_in? %>
+          <li class="nav-item active">
+             <%= link_to "Home", root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Monsters", monsters_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "My Bookings", user_bookings_path(@user), class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= image_tag "https://m.media-amazon.com/images/I/51Rf39H8ztL._AC_SX522_.jpg", class: "avatar", alt: "dropdown menu" %>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "dropdown-item" %>
+            </div>
+          </li>
         <% else %>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
           <li class="nav-item active">
             <%= link_to "Home", root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Monsters", monsters_path, class: "nav-link" %>
           </li>
         <% end %>
       </ul>
