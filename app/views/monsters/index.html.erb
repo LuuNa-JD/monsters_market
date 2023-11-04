@@ -1,9 +1,11 @@
-<div class="container-monsters">
-  <div class="row">
-    <% @monsters.each do |monster| %>
+<div class="container mt-5 pt-5">
+  <div class="container-monsters">
+    <div class="row">
+      <% @monsters.each do |monster| %>
       <div class="col-md-4 mb-4">
         <div class="monster-card">
-          <img src="<%= cl_image_path monster.photo.key, width: 300, height: 200, crop: :fill %>" class="card-img-top" alt="<%= monster.name %>">
+          <img src="<%= cl_image_path monster.photo.key, width: 300, height: 200, crop: :fill %>" class="card-img-top"
+            alt="<%= monster.name %>">
           <div class="monster-card-body">
             <p class="card-title-monsters"><%= monster.name %></p>
             <p class="card-text-monsters">Price: <%= monster.price %>$ per week</p>
@@ -12,6 +14,7 @@
           </div>
         </div>
       </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
