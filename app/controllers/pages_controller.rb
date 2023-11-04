@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @user = current_user
+    @monsters = Monster.all.sample(5)
   end
 end

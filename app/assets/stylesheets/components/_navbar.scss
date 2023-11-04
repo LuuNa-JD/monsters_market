@@ -1,6 +1,10 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: blue; /* Change the background color to blue */
+  background: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
 }
 
 .navbar-lewagon .navbar-collapse {
