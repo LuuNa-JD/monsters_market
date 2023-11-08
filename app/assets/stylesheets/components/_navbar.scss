@@ -1,7 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: black;
+  background-color: #ffffff !important;
   position: fixed;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
   top: 0;
   width: 100%;
   z-index: 1030;
@@ -13,4 +14,60 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-brand {
+  font-family: 'Creepster', cursive !important;
+  color:green !important;
+}
+
+.navbar-toggler-icon {
+  background-color: #c00 !important;
+}
+
+.nav-link {
+  color: #000000 !important;
+}
+
+.nav-link:hover {
+  color: #c00 !important;
+}
+
+.title-navbar {
+  font-family: 'Creepster', cursive !important;
+  color: #c00 !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+  font-size: 24px !important;
+  margin-left: 5px;
+  border: 2px solid #c00 !important;
+  padding: 5px 10px !important;
+  border-radius: 10px !important;
+  background-color: #111 !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+.title-navbar:hover {
+  color: #800 !important;
+}
+
+.scrolling-message {
+  color: #c00 !important;
+  font-size: 50px !important;
+  font-family: 'Creepster', cursive !important;
+  text-align: center !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  white-space: nowrap !important;
+  animation: scrollMessage 5s linear infinite alternate !important;
+}
+
+.dropdown-menu {
+  background-color: #111 !important;
+}
+
+.dropdown-item {
+  color: #c00 !important;
 }

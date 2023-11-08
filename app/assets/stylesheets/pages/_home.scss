@@ -1,387 +1,89 @@
 @import url('https://fonts.googleapis.com/css?family=Creepster&display=swap');
-@import "bootstrap";
-
 
 html, body {
-  background-image: url('background2.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100%;
-  padding: 0;
+  background-image: linear-gradient(135deg, #ff7f00 0%, #000000 100%);
+  height: 100vh;
   margin: 0;
+  padding: 0;
+  overflow: hidden;
   box-sizing: border-box;
-  color: #fff;
   font-family: 'Creepster', cursive;
+  color: #fff;
   text-align: center;
 }
 
 .container-home {
   min-height: 100vh;
   display: flex;
-  position: relative;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   max-width: 1200px;
-  margin: auto;
-  padding: 50px;
-  padding-top: 0;
+  margin: 0 auto;
+  padding: 20px;
   box-sizing: border-box;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid #ff7f00;
   border-radius: 20px;
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.1);
-  padding-bottom: 4rem;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 165, 0, 0.2);
+}
 
-  box-shadow:
-    0 0 10px rgba(0, 123, 255, 0.5),
-    0 0 20px rgba(0, 123, 255, 0.5),
-    0 0 40px rgba(0, 123, 255, 0.5),
-    0 0 60px rgba(40, 167, 69, 0.5),
-    0 0 80px rgba(40, 167, 69, 0.5);
-  animation: neon 2s infinite alternate;
 
-  @keyframes neon {
-    from {
-      box-shadow:
-        0 0 5px rgba(0, 123, 255, 0.5),
-        0 0 10px rgba(0, 123, 255, 0.5),
-        0 0 15px rgba(0, 123, 255, 0.5),
-        0 0 20px rgba(40, 167, 69, 0.5),
-        0 0 25px rgba(40, 167, 69, 0.5);
-    }
-    to {
-      box-shadow:
-        0 0 10px rgba(0, 123, 255, 0.5),
-        0 0 20px rgba(0, 123, 255, 0.5),
-        0 0 30px rgba(0, 123, 255, 0.5),
-        0 0 40px rgba(40, 167, 69, 0.5),
-        0 0 50px rgba(40, 167, 69, 0.5);
-    }
+@keyframes neon {
+
+  from {
+    box-shadow:
+      0 0 10px #ff7f00,
+      0 0 20px #ff7f00,
+      0 0 40px #ff7f00,
+      0 0 80px #ff7f00;
+  }
+  to {
+    box-shadow:
+      0 0 20px #ff7f00,
+      0 0 30px #ff7f00,
+      0 0 50px #ff7f00,
+      0 0 90px #ff7f00;
   }
 }
 
 .carousel-container {
-  width: 100%;
-  max-height: 60vh;
-  margin-top: 20px;
-  margin-bottom: 2em;
-  position: relative;
-  .carousel-inner {
-    .carousel-item {
-      position: relative;
-      text-align: center;
-      .carousel-caption {
-        h5 {
-          display: block;
-          font-size: 1.75rem;
-          font-weight: 700;
-        }
-      }
-    }
-  }
-}
-.carousel-container, .start-button {
-  flex-shrink: 0;
-}
-
-.carousel-caption {
-  position: static;
-  padding: 0.5rem;
-  h5, p {
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    background-color: rgba(0, 0, 0, 0.5);
-    display: inline-block;
-    margin: 0.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-  }
-}
-
-.carousel-item img {
-  object-fit: cover;
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto;
-}
-
-.carousel-inner img {
-  max-height: 100%;
-  width: auto;
-  object-fit: contain;
-}
-
-.title-home {
-  font-size: 36px;
   margin: 0;
-  color: #c00;
-  padding: 5px 0;
-  font-size: calc(3vh + 1em);
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.slogan-home {
-  position: relative;
-  z-index: 10;
-  font-size: 3rem;
-  color: #3572dc;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  padding-top: 0px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-
-
-  background: -webkit-linear-gradient(45deg, #007bff, #28a745);
-  background: linear-gradient(45deg, #007bff, #28a745);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-}
-
-.animated-slogan {
-  animation: fadeInUp 1s ease forwards;
-
-}
-
-
-.start-button {
-  margin-top: 30px;
-  margin-bottom: 2em;
-}
 
 .btn-start-adventure {
-  display: inline-block;
-  padding: 15px 30px;
-  font-size: calc(2vh + 1em);
-  background-image: linear-gradient(to right, #007bff, #28a745);
+  background-image: linear-gradient(135deg, #ff7f00 0%, #000000 100%);
   color: #fff;
   border: none;
   border-radius: 10px;
   text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   font-weight: bold;
-  text-shadow: 0px 0px 5px #000;
-  animation: pulse 2s infinite;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  position: relative;
-  z-index: 2;
+  text-shadow: 2px 2px 4px #000000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  padding: 10px 20px;
 }
 
 .btn-start-adventure:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(255, 140, 0, 0.6);
 }
 
-.btn-start-adventure:active {
-  transform: translateY(-1px);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
-}
-
-.cards-home {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  gap: 20px;
-  padding: 20px;
-}
-
-.card-category-home {
-  flex: 0 1 calc(30% - 10px);
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  padding: 20px;
-  color: #fff;
-  font-size: 20px;
-  border: 2px solid #c00;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-  transition: background-color 0.3s ease;
-}
-
-.card-category-home:hover {
-  background-color: #800;
-}
-
-.navbar-lewagon {
-  background-color: #ffffff !important;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1030;
-}
-
-.navbar-brand {
-  font-family: 'Creepster', cursive !important;
-  color:green !important;
-}
-
-.navbar-toggler-icon {
-  background-color: #c00 !important;
-}
-
-.nav-link {
-  color: #000000 !important;
-}
-
-.nav-link:hover {
-  color: #c00 !important;
-}
-
-.avatar {
-  border: 2px solid #c00 !important;
-  border-radius: 50% !important;
-  background-color: #c00 !important;
-}
-
-.dropdown-menu {
-  background-color: #111 !important;
-}
-
-.dropdown-item {
-  color: #c00 !important;
+.title-home, .carousel-caption h5, .carousel-caption p, .btn-start-adventure {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 
-.title-navbar {
-  font-family: 'Creepster', cursive !important;
-  color: #c00 !important;
-  text-align: center !important;
-  margin: 0 auto !important;
-  font-size: 24px !important;
-  margin-left: 5px;
-  border: 2px solid #c00 !important;
-  padding: 5px 10px !important;
-  border-radius: 10px !important;
-  background-color: #111 !important;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
-}
-
-.title-navbar:hover {
-  color: #800 !important;
-}
-
-.card {
-  flex: 0 0 auto;
-  width: 300px;
-  border: 1px solid #c00;
-  border-radius: 10px;
-  background-color: #333;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-  scroll-snap-align: start;
-  transition: transform 0.5s ease;
-}
-
-
-.card-img-top {
-  width: 100%;
-  height: 500px;
+.carousel-item img {
+  max-height: 50vh;
   object-fit: cover;
-    border-radius: 0;
 }
 
 
-.card-img-top:hover {
-  transform: scale(1.05);
-}
-.card-body {
-  background-color: #fff;
-  border-radius: .25rem;
-  padding: 1rem;
-  margin-top: -4rem;
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
-  position: relative;
-  z-index: 10;
-}
-
-.card-title {
-  font-size: 1.5em;
-  color: #fff;
-  margin-top: 10px;
-  text-shadow: 0 0 3px #000, 0 0 5px #000;
-  font-weight: bold;
-  margin-bottom: 0.25rem;
-}
-
-.carousel-caption .card-price {
-  font-size: 1.25em;
-  font-weight: 600;
-  color: #53618a;
-  text-shadow: 0 0 3px #000, 0 0 5px #000;
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0px rgba(0, 123, 255, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(0, 123, 255, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0px rgba(0, 123, 255, 0);
-  }
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-  from {
-    transform: translate3d(0, 40px, 0);
-    opacity: 0;
-  }
-
-  to {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
-}
-
-
-.fade-in {
-  animation: fadeIn 1s ease forwards;
-}
-
-.animated {
-  animation: pulse 2s infinite;
-}
-
-.scrolling-message {
-  color: #c00 !important;
-  font-size: 50px !important;
-  font-family: 'Creepster', cursive !important;
-  text-align: center !important;
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  white-space: nowrap !important;
-  animation: scrollMessage 5s linear infinite alternate !important;
-}
-
-@media (max-width: 768px) {
-  .card {
-    width: 100%;
-  }
-  .slogan-home {
-    font-size: 2rem;
-  }
-
-  .carousel-item .card-img-top {
-    height: 300px;
-  }
-}
-
-@media (min-width: 992px) {
-  .carousel-item .card-img-top {
-    height: 650px;
-  }
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
 }
