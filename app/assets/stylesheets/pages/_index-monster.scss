@@ -4,27 +4,23 @@
 
 .container-monsters {
   margin-top: 20px;
-  padding-top: 20px;
 }
-.btn-primary-monsters:hover {
-  background-color: #800; /* Modification de la couleur du bouton en rouge au survol */
-}
-
 
 .monster-card {
-  border: 2px solid #00FF00; /* Changement de la couleur de la bordure en vert */
+  border: 2px solid #FF8800;
   border-radius: 15px;
-  background-color: #222;
+  background-color: #9b9b9b;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  color: #fff;
+  color: #9b9b9b;
   transition: transform 0.3s;
   text-align: center;
-  padding: 10px;
+  padding: 5px;
+  margin: 10px;
 }
 
 .monster-card:hover {
   transform: scale(1.05);
-  background-color: #333;
+  background-color: #FF4D00;
 }
 
 .card-img-top {
@@ -38,26 +34,28 @@
 }
 
 .card-title-monsters {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
   font-weight: bold;
-  color: #00FF00; /* Modification de la couleur du titre en vert */
+  color: #FF8800;
 }
 
 .card-text-monsters {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: black;
 }
 
 .btn-primary-monsters {
-  background-color: #00FF00; /* Changement de la couleur du bouton en vert */
-  border-color: #00FF00;
+  background-color: #FF8800;
+  border-color: #FF8800;
   border-radius: 15px;
-  font-size: 1.2rem;
-  padding: 10px 20px;
+  font-size: 1.4rem;
+  padding: 15px 30px;
   transition: background-color 0.3s;
   color: #fff;
 }
 
 .btn-primary-monsters:hover {
-  background-color: #008000;}
+  background-color: #FF4D00;
+}
