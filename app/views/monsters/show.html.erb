@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container mt-5">
   <div class="row">
     <div class="col">
       <img class="monster-image img-fluid"
@@ -14,7 +14,7 @@
       <div class="book-button">
         <%= form_for @booking, url: user_new_booking_path(@user), method: :post do |f| %>
         <%= f.hidden_field :monster_id, value: @monster.id %>
-        <%= f.submit "Let's Book", class: "btn btn-success" %>
+        <%= f.submit "Reservation", class: "btn btn-success" %>
         <% end %>
       </div>
     </div>
