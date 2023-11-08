@@ -1,6 +1,7 @@
 class MonstersController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   before_action only: [:index, :show, :new, :create]
+  before_action :find_vendor?, only: [:new, :create]
 
   def index
     @user = current_user
@@ -52,5 +53,11 @@ class MonstersController < ApplicationController
 
   def monster_params
     params.require(:monster).permit(:name, :description, :price, :photo)
+  end
+
+  def find_vendor?
+    unless current_user.vendor
+      redirect_to monsters_path
+    end
   end
 end
