@@ -6,8 +6,11 @@
     <% end %>
 
 
-    <div class="scrolling-message">Bienvenue <%= current_user.first_name %></div>
-
+    <% if current_user %>
+      <div class="scrolling-message">Bienvenue <%= current_user.first_name %></div>
+    <% else %>
+      <div class="scrolling-message">Bienvenue visiteur !</div>
+    <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
