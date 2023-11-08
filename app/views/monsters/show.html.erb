@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monster Details</title>
-</head>
-<body>
-    <div class="container">
+
+    <div class="container custom-margin-top">
         <div class="row">
             <div class="col-md-6">
                 <img class="monster-image img-fluid" src="<%= cl_image_path @monster.photo.key, width: 300, height: 300, crop: :fill %>" alt="Monster Image">
@@ -16,13 +9,11 @@
                 <p class="monster-description"><%= @monster.description %></p>
                 <p class="monster-price">Price: <%= @monster.price %>$ per week</p>
                 <div class="book-button">
-                  <%= form_for @booking, url: user_new_booking_path(@user), method: :post do |f| %>
-                    <%= f.hidden_field :monster_id, value: @monster.id %>
-                    <%= f.submit "Let's Book", class: "btn btn-success" %>
-                  <% end %>
+                    <%= form_for @booking, url: user_new_booking_path(@user), method: :post do |f| %>
+                        <%= f.hidden_field :monster_id, value: @monster.id %>
+                        <%= f.submit "Let's Book", class: "btn btn-success" %>
+                    <% end %>
                 </div>
             </div>
         </div>
-    </div>
-</body>
-</html>
+    </div>>
