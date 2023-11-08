@@ -1,30 +1,20 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>MonstersMarket</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-<head>
-  <title>MonstersMarket</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
 
-  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-  <%= javascript_importmap_tags %>
-</head>
-
-<body>
-
-
-  <%= render "shared/navbar" %>
-  <p class="alert"><%= alert %></p>
-  <%= render "shared/flashes" %>
-  <p class="notice"><%= notice %></p>
-
-  <div class="container mt-5 pt-5">
-  <div class="row">
+  <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= render "shared/navbar" %>r
+    <%= render "shared/flashes" %>
     <%= yield %>
-  </div>
-  </div>
-
-</body>
-
-</html>
+  </body>
+</html>r

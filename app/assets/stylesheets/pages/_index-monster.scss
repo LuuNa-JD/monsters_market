@@ -4,21 +4,23 @@
 
 .container-monsters {
   margin-top: 20px;
-  padding-top: 20px;
 }
 
 .monster-card {
-  border: 1px solid #c00;
+  border: 2px solid #FF8800;
   border-radius: 15px;
-  background-color: #222;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  color: #fff;
-  transition: transform 0.2s;
+  background-color: #9b9b9b;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #9b9b9b;
+  transition: transform 0.3s;
   text-align: center;
+  padding: 5px;
+  margin: 10px;
 }
 
 .monster-card:hover {
   transform: scale(1.05);
+  background-color: #FF4D00;
 }
 
 .card-img-top {
@@ -28,39 +30,32 @@
 }
 
 .monster-card-body {
-  padding: 20px;
+  padding: 10px;
 }
 
 .card-title-monsters {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
   font-weight: bold;
+  color: #FF8800;
 }
 
 .card-text-monsters {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: black;
 }
 
 .btn-primary-monsters {
-  background-color: #c00;
-  border-color: #c00;
+  background-color: #FF8800;
+  border-color: #FF8800;
   border-radius: 15px;
-  font-size: 1.2rem;
-  padding: 10px 20px;
+  font-size: 1.4rem;
+  padding: 15px 30px;
   transition: background-color 0.3s;
+  color: #fff;
 }
 
 .btn-primary-monsters:hover {
-  background-color: #800;
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.col-md-4 {
-  flex: 0 0 calc(33.333% - 20px);
+  background-color: #FF4D00;
 }
