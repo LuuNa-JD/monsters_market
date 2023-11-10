@@ -34,6 +34,8 @@
 }
 
 .card-title-monsters {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
   font-size: 1.8rem;
   margin-bottom: 10px;
   font-weight: bold;
@@ -57,5 +59,6 @@
 }
 
 .btn-primary-monsters:hover {
-  background-color: #FF4D00;
+  background-color: #000000;
+  color : #ffffff;
 }
