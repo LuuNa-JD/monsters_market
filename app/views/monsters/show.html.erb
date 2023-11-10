@@ -1,21 +1,20 @@
-
 <div class="container mt-5">
   <div class="row">
-    <div class="col">
+    <div class="col-md-6">
       <img class="monster-image img-fluid"
-        src="<%= cl_image_path @monster.photo.key, width: 300, height: 300, crop: :fill %>" alt="Monster Image">
+        src="<%= cl_image_path @monster.photo.key, width: 1000, height: 600, crop: :fill %>" alt="Monster Image">
     </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <h1 class="monster-title pt-2 m-0 fw-bolder"><%= @monster.name %></h1>
-      <p class="monster-description fw-bold"><%= @monster.description %></p>
-      <p class="monster-price fw-bold">Price: <%= @monster.price %>$ per week</p>
-      <div class="book-button">
-        <%= form_for @booking, url: user_new_booking_path(@user), method: :post do |f| %>
-        <%= f.hidden_field :monster_id, value: @monster.id %>
-        <%= f.submit "Reservation", class: "btn btn-success", data: { turbo_confirm: 'Are you sure?' } %>
-        <% end %>
+    <div class="col-md-6">
+      <div class="d-flex flex-column justify-content-end h-100">
+        <h1 class="monster-title fw-bolder"><%= @monster.name %></h1>
+        <p class="monster-description fw-bold"><%= @monster.description %></p>
+        <p class="monster-price fw-bold">Price: <%= @monster.price %>$ per week</p>
+        <div class="book-button mt-3">
+          <%= form_for @booking, url: user_new_booking_path(@user), method: :post do |f| %>
+          <%= f.hidden_field :monster_id, value: @monster.id %>
+          <%= f.submit "Reservation", class: "btn btn-success", data: { turbo_confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
