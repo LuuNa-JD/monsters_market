@@ -1,0 +1,7 @@
+<h1>Nouvelle Réservation de <%= @monster.name %></h1>
+<p>Bonjour <%= @monster.user.first_name %>,</p>
+<p><%= @user.first_name %> veut réserver votre monstre: <%= @monster.name %>!</p>
+<p>Message personnel de l'utilisateur :</p>
+<p><%= @personal_message %></p>
+
+<p>Vous pouvez contacter l'utilisateur à l'adresse suivante: <%= mail_to @user.email %> ou bien vous rediriger sur le site à l'adresse suivante: <%= link_to 'Vos Réservations', user_bookings_url(@user) %> </p>
