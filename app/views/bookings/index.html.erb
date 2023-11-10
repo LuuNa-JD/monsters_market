@@ -22,7 +22,7 @@
                 <% else %>
 
                   <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<%=booking.id%>">
+                    <button type="button" class="btn btn-success booking-index-button rounded" data-bs-toggle="modal" data-bs-target="#exampleModal<%=booking.id%>">
                       Approbation
                     </button>
 
@@ -36,10 +36,6 @@
                           </div>
                           <div class="modal-body">
                             <%= render "edit", booking: booking %>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
                           </div>
                         </div>
                       </div>
@@ -80,4 +76,4 @@
         </tbody>
       </table>
     <% end %>
-  <%= link_to "Monsters", monsters_path, class: "btn btn-success" %>
+  <%= link_to "Monsters", monsters_path, class: "btn btn-success rounded booking-index-button" %>
