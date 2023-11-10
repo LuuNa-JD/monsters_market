@@ -1,0 +1,58 @@
+// styles.scss
+
+.custom-form {
+  border-radius: 10px;
+  padding: 20px;
+  color: #fff;
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ff7f00;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    color: #333;
+    transition: border-color 0.3s, background-color 0.3s;
+
+    &::placeholder {
+      color: #999;
+    }
+
+    &:focus {
+      border-color: #ff5e00;
+      background-color: #fff;
+    }
+  }
+
+  .form-control-file {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ff7f00;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    color: #333;
+    transition: border-color 0.3s, background-color 0.3s;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #ff7f00, #ff5e00);
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+      background: linear-gradient(135deg, #ff5e00, #ff3a00);
+    }
+  }
+
+  h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+}
