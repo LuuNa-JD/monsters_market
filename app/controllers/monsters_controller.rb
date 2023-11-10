@@ -1,6 +1,6 @@
 class MonstersController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  before_action only: [:index, :show, :new, :create]
+  before_action :set_monster, only: [:show, :edit, :update, :destroy]
   before_action :find_vendor?, only: [:new, :create]
 
   def index
@@ -33,23 +33,28 @@ class MonstersController < ApplicationController
   end
 
   def edit
-    @monster = Monster.find(params[:id])
+    # @monster est déjà initialisé par set_monster
   end
 
   def update
+    # @monster est déjà initialisé par set_monster
     if @monster.update(monster_params)
-      redirect_to @monster
+      redirect_to @monster, notice: 'Le monstre a été mis à jour avec succès.'
     else
-      render 'edit'
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
+    @monster = Monster.find(params[:id])
     @monster.destroy
-    redirect_to monsters_path
+    redirect_to monsters_path, notice: 'Le monstre a été supprimé.'
   end
-
   private
+
+  def set_monster
+    @monster = Monster.find(params[:id])
+  end
 
   def monster_params
     params.require(:monster).permit(:name, :description, :price, :photo)
