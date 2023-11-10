@@ -12,7 +12,10 @@ class BookingsController < ApplicationController
 
     @monster = Monster.find(params[:booking][:monster_id])
     @booking = Booking.new(user: @user, monster: @monster)
+    personal_message = params[:booking][:personal_message]
+
     if @booking.save
+      MonsterMailer.reservation_email(current_user, @monster, personal_message).deliver_now
       redirect_to user_bookings_path, notice: "Demande de réservation créée avec succès"
     else
 

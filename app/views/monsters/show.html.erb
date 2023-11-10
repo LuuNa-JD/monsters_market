@@ -10,15 +10,13 @@
         <p class="monster-description fw-bold"><%= @monster.description %></p>
         <p class="monster-price fw-bold">Prix: <%= @monster.price %>$ par semaine</p>
         <div class="book-button mt-3">
-          <%= form_for @booking, url: user_new_booking_path(@user), method: :post do |f| %>
-          <%= f.hidden_field :monster_id, value: @monster.id %>
-          <%= f.submit "Reservation", class: "btn btn-success", data: { turbo_confirm: 'Are you sure?' } %>
-          <% end %>
+          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#emailModal">Réservation</button>
+        </div>
           <div class="btn-group mt-2 pt-1" style="margin-left: 30px;" role="group" aria-label="Actions">
+          <% if current_user == @monster.user %>
             <%= link_to 'Edit', edit_monster_path(@monster), class: 'btn btn-primary custom-button' %>
-            <% if current_user == @monster.user %>
             <%= button_to 'Supprimer', monster_path(@monster), method: :delete, data: { confirm: 'Êtes-vous sûr?' }, class: "btn btn-danger custom-button" %>
-            <% end %>
+          <% end %>
             <%= link_to 'Retour', monsters_path, class: "btn btn-secondary custom-button" %>
           </div>
 
@@ -27,3 +25,4 @@
     </div>
   </div>
 </div>
+<%= render 'email_modal' %>
