@@ -40,7 +40,10 @@ class BookingsController < ApplicationController
 
   def update
     if @booking.update(booking_params)
-      redirect_to user_bookings_path
+      if @booking.approved?
+        MonsterMailer.booking_confirmation_email(@booking.user, @booking.monster).deliver_now
+      end
+      redirect_to user_bookings_path, notice: "Demande de réservation mise à jour avec succès"
     else
       render :edit
     end
