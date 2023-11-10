@@ -49,7 +49,6 @@ Rails.application.configure do
   # config.force_ssl = true
   config.action_mailer.default_url_options = { host: 'https://monsters-market-e04d1cbe21d2.herokuapp.com/' }
   config.action_mailer.delivery_method = :mailjet
-  config.action_mailer.default_options = {from: 'luunz71@gmail.com'}
   config.action_mailer.perform_deliveries = true
 
   # Include generic and useful information about system operation, but avoid logging too much
