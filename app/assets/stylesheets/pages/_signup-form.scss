@@ -1,0 +1,29 @@
+.form-container {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+
+  .form-inputs input,
+  .form-inputs textarea,
+  .form-inputs select {
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+  }
+
+
+  .form-actions input {
+    background-color: #f0ad4e;
+    color: black;
+  }
+  .form-actions input:hover {
+    background-color: #ec971f;
+  }
+
+
+  a {
+    color: #f0ad4e;
+  }
