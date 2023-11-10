@@ -1,81 +1,9 @@
 <div class="container">
   <h1 class="mt-5">Vos Réservations</h1>
   <% if @user.vendor %>
-      <table class="table table-striped table-bordered mt-3">
-        <thead>
-          <tr>
-            <th>Date de Réservation</th>
-            <th>Client</th>
-            <th>Monster</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @bookings.each do |booking| %>
-            <tr>
-              <td><%= booking.created_at %></td>
-              <td><%= booking.user.first_name %></td>
-              <td><%= booking.monster.name %></td>
-              <td>
-                <% if booking.approved  %>
-                  Approuver
-                <% elsif booking.approved == false %>
-                    Refuser
-                <% else %>
-
-                  <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-success booking-index-button rounded" data-bs-toggle="modal" data-bs-target="#exampleModal<%=booking.id%>">
-                      Approbation
-                    </button>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal<%=booking.id%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            <%= render "edit", booking: booking%>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                <% end %>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+      <%= render "vendor_table", bookings: @bookings %>
   <% else %>
-       <table class="table table-striped table-bordered mt-3">
-        <thead>
-          <tr>
-            <th>Date de Réservation</th>
-            <th>Monster</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @bookings.each do |booking| %>
-            <% if booking.user == current_user %>
-              <tr>
-                <td><%= booking.created_at %></td>
-                <td><%= booking.monster.name %></td>
-                <td>
-                    <% if booking.approved%>
-                      Accepter
-                    <% elsif booking.approved == nil%>
-                      En attente
-                    <% else %>
-                    Refuser
-                    <% end %>
-                </td>
-              </tr>
-            <% end %>
-          <% end %>
-        </tbody>
-      </table>
-    <% end %>
+      <%= render "non_vendor_table", bookings: @bookings %>
+  <% end %>
+
   <%= link_to "Monsters", monsters_path, class: "btn btn-success rounded booking-index-button" %>
