@@ -18,7 +18,9 @@
               <td><%= booking.monster.name %></td>
               <td>
                 <% if booking.approved  %>
-                  Approved
+                  Approuver
+                <% elsif booking.approved == false %>
+                    Refuser
                 <% else %>
 
                   <!-- Button trigger modal -->
@@ -35,7 +37,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body">
-                            <%= render "edit", booking: booking %>
+                            <%= render "edit", booking: booking%>
                           </div>
                         </div>
                       </div>
