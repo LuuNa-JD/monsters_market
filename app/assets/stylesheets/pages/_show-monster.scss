@@ -1,35 +1,34 @@
-
-
 .monster-image {
-  width: 60vw;
-  height: 350px;
+  width: 100%;
+  height: auto;
+  max-height: 600px; /* Ajustez selon votre préférence */
   box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
   border-radius: 10px;
 }
 
-
 .monster-title {
   font-size: 36px;
-  margin: 20px 0;
   color: black;
+  margin-bottom: 10px;
 }
 
 .monster-description {
   font-size: 18px;
-  margin: 10px 0;
+  color: black;
+  margin-bottom: 10px;
 }
 
 .monster-price {
   font-size: 24px;
-  margin: 10px 0;
-  color:black;
+  color: black;
+  margin-bottom: 10px;
 }
 
 .book-button {
-  margin-top: 20px;
+  margin-top: auto;
 }
 
-.book-button a {
+.book-button input[type="submit"] {
   display: inline-block;
   padding: 10px 20px;
   color: #fff;
@@ -37,14 +36,10 @@
   border-radius: 5px;
   font-size: 18px;
   transition: background-color 0.3s ease;
-
-
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
 
-.book-button a:hover {
+.book-button input[type="submit"]:hover {
   background-color: #800;
 }
-
-
