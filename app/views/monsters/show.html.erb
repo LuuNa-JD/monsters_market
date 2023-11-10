@@ -14,14 +14,16 @@
           <%= f.hidden_field :monster_id, value: @monster.id %>
           <%= f.submit "Reservation", class: "btn btn-success", data: { turbo_confirm: 'Are you sure?' } %>
           <% end %>
+          <div class="btn-group mt-2" role="group" aria-label="Actions">
+  <%= link_to 'Edit', edit_monster_path(@monster), class: 'btn btn-primary' %>
+  <% if current_user == @monster.user %>
+  <%= button_to 'Supprimer', monster_path(@monster), method: :delete, data: { confirm: 'Êtes-vous sûr?' }, class: "btn btn-danger" %>
+  <% end %>
+  <%= link_to 'Retour', monsters_path, class: "btn btn-secondary" %>
+</div>
+
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<%= link_to 'Edit', edit_monster_path(@monster), class: 'btn btn-primary' %>
-
-<%= button_to 'Supprimer', monster_path(@monster), method: :delete, data: { confirm: 'Êtes-vous sûr?' }, class: "btn btn-danger" %>
-
-<%= link_to 'Retour', monsters_path, class: "btn btn-secondary" %>
