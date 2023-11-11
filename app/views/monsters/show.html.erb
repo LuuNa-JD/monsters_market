@@ -14,12 +14,16 @@
         </div>
           <div class="btn-group mt-2 pt-1" style="margin-left: 30px;" role="group" aria-label="Actions">
             <% if current_user == @monster.user %>
-              <%= link_to 'Edit', edit_monster_path(@monster), class: 'btn btn-primary custom-button' %>
-              <%= button_to 'Supprimer', monster_path(@monster), method: :delete, data: { confirm: 'Êtes-vous sûr?' }, class: "btn btn-danger custom-button" %>
+                <%= link_to 'Edit', edit_monster_path(@monster), class: 'btn btn-primary custom-button' %>
+                <%= button_to 'Supprimer', monster_path(@monster), method: :delete, data: { confirm: 'Êtes-vous sûr?' }, class: "btn btn-danger custom-button" %>
+                <%= link_to 'Retour', monsters_path, class: "btn btn-secondary custom-button" %>
+            <% else %>
+                <div class="d-grid gap-2 d-md-block">
+                  <%= link_to 'Retour', monsters_path, class: "btn btn-secondary custom-button" %>
+                </div>
+
             <% end %>
-            <div class="d-grid gap-2 d-md-block">
-            <%= link_to 'Retour', monsters_path, class: "btn btn-secondary custom-button" %>
-            </div>
+
           </div>
 
         </div>
