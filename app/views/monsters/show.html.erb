@@ -28,14 +28,12 @@
 
           </div>
 
-       <p class="monster-price fw-bold">Price: <%= @monster.price %>$ per week</p>
-
         <h2 class="monster-reviews-title fw-bold">Reviews</h2>
         <% if @monster.review_text.present? %>
           <p class="monster-review-text fw-bold">Review: <%= @monster.review_text %></p>
         <% else %>
           <p class="no-reviews-message">No reviews yet.</p>
-  
+
         <% end %>
         </div>
       </div>
@@ -45,15 +43,11 @@
 
 
 <%= render 'email_modal' %>
-              
+
               <div data-controller="review" class="container mt-3">
   <div class="row">
     <div class="col-md-6">
           <button class="btn btn-primary" id="show-review-form" data-action="click->review#toggle">Add Reviews</button>
-      <%= form_for @booking, url: user_new_booking_path(@user), method: :post, class: "needs-validation" do |f| %>
-        <%= f.hidden_field :monster_id, value: @monster.id %>
-        <%= f.submit "Reservation", class: "btn btn-success", data: { turbo_confirm: 'Are you sure?' } %>
-      <% end %>
     </div>
     <div data-review-target="AddReview" class="col-md-6 d-none">
       <%= form_for @monster, url: custom_create_review_monster_path(@monster), method: :post, class: "needs-validation" do |f| %>
@@ -71,4 +65,3 @@
     </div>
   </div>
 </div>
-
