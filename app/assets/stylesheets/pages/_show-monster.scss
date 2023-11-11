@@ -14,62 +14,102 @@
 
 .monster-title {
   font-size: 36px;
-  color: black; /* Couleur du texte modifiée */
+  color: black;
   margin-bottom: 10px;
 }
 
 .monster-description {
   font-size: 18px;
-  color: black; /* Couleur du texte modifiée */
+  color: black;
   margin-bottom: 10px;
 }
 
 .monster-price {
   font-size: 24px;
-  color: black; /* Couleur du texte modifiée */
+  color: black;
   margin-bottom: 10px;
 }
 
 .monster-reviews-title {
   font-size: 24px;
-  color: black; /* Couleur du texte modifiée */
+  color: black;
   margin-top: 20px;
 }
 
 .monster-review-text {
   font-size: 18px;
-  color: black; /* Couleur du texte modifiée */
+  color: black;
   margin-bottom: 10px;
 }
 
 .no-reviews-message {
   font-size: 18px;
-  color: black; /* Couleur du texte modifiée */
+  color: black;
   margin-bottom: 10px;
 }
 
-.btn-reservation,
 .btn-add-review {
-  display: inline-block;
-  padding: 10px 20px;
+  background-color: #000000;
   color: #fff;
-  text-decoration: none;
+  padding: 10px 20px;
   border-radius: 5px;
   font-size: 18px;
-  transition: background-color 0.3s ease;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  background-color: #800;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease;
 }
 
-.btn-reservation:hover,
 .btn-add-review:hover {
-  background-color: #600;
+  background-color: #1EDD88;
 }
 
 .form-control {
   font-size: 14px;
   padding: 8px 12px;
+}
+
+.review-form {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.review-form .form-control {
+  padding: 8px 12px;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.review-form .form-control:focus {
+  border-color: #1EDD88;
+  box-shadow: 0 0 8px rgba(30, 221, 136, 0.6); /* Pour correspondre aux focus des autres formulaires */
+}
+.review-form .submit-button {
+  background-color: #000000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease;
+}
+.review-form .submit-button:hover {
+  background-color: #1EDD88;
+}
+.submit-button
+{
+  margin-top: 10px;
+}
+.form-label {
+  display: block;
+  font-size: 16px;
+  color: #000000;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+
+.rating-label {
+  font-size: 18px;
+  color: black
 }
 
 .custom-button {
