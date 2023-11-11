@@ -1,7 +1,7 @@
 class MonstersController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   before_action :set_monster, only: [:show, :edit, :update, :destroy]
-  before_action :find_vendor?, only: [:new, :create]
+  before_action :find_vendor?, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @user = current_user
@@ -62,7 +62,7 @@ class MonstersController < ApplicationController
 
   def find_vendor?
     unless current_user.vendor
-      redirect_to monsters_path
+      redirect_to monsters_path, notice: "Vous etes pas un vendeur"
     end
   end
 end
