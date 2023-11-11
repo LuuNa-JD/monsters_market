@@ -15,6 +15,20 @@ class MonstersController < ApplicationController
     @booking = Booking.new(user: @user, monster: @monster)
   end
 
+  def create_review
+    puts"salu"
+    @new_review = @monster.reviews.build(review_params)
+
+    if @new_review.save
+      flash[:success] = "Review created successfully."
+      redirect_to monster_path(@monster)
+    else
+      flash[:error] = "Failed to create the review."
+      render 'show'
+    end
+  end
+
+
   def new
     @user = current_user
     @monster = Monster.new(user: @user)
@@ -53,6 +67,10 @@ class MonstersController < ApplicationController
 
   def monster_params
     params.require(:monster).permit(:name, :description, :price, :photo)
+  end
+
+  def review_params
+    params.require(:review).permit(:rating, :review_text)
   end
 
   def find_vendor?
