@@ -29,7 +29,8 @@ class BookingsController < ApplicationController
 
   def index
     @user = current_user
-    @bookings = Booking.order(created_at: :asc).all
+    @bookings = Booking.order(created_at: :desc).page(params[:page]).per(10)
+
   end
 
   def edit

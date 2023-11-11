@@ -1,9 +1,11 @@
 <div class="container">
   <h1 class="mt-5">Vos Réservations</h1>
   <% if @user.vendor %>
+    <%= paginate @bookings %>
       <%= link_to "Monsters", monsters_path, class: "btn btn-success rounded booking-index-button" %>
       <%= render "vendor_table", bookings: @bookings %>
   <% else %>
+      <%= paginate @bookings %>
       <%= link_to "Monsters", monsters_path, class: "btn btn-success rounded booking-index-button" %>
       <%= render "non_vendor_table", bookings: @bookings %>
   <% end %>
