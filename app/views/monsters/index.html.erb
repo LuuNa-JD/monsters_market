@@ -4,13 +4,13 @@
       <% @monsters.each do |monster| %>
         <div class="col-md-3 mb-4">
           <div class="monster-card">
-            <img src="<%= cl_image_path monster.photo.key, width: 300, height: 200, crop: :fill %>" class="card-img-top"
+            <img src="<%= cl_image_path monster.photo.key, width: 300, height: 200, crop: :pad %>" class="card-img-top"
               alt="<%= monster.name %>">
             <div class="monster-card-body">
               <h2 class="card-title-monsters"><%= monster.name %></h2>
-              <p class="card-text-monsters">Price: <%= monster.price %>$ per week</p>
-              <p class="card-text-monsters">Hosted by: <%= monster.user.first_name %></p>
-              <%= link_to "View Details", monster_path(monster), class: "btn btn-primary-monsters" %>
+              <p class="card-text-monsters">Prix: <%= monster.price %>$ par semaine</p>
+              <p class="card-text-monsters">Proprietaire: <%= monster.user.first_name %></p>
+              <%= link_to "Voir les détails", monster_path(monster), class: "btn btn-primary-monsters" %>
             </div>
           </div>
         </div>

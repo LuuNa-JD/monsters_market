@@ -1,0 +1,17 @@
+<!-- Modal -->
+<div class="modal fade" id="emailModal" tabindex="-1" aria-labelledby="emailModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <%= form_for @booking, url: user_new_booking_path(@user), method: :post do |f| %>
+          <%= f.hidden_field :monster_id, value: @monster.id %>
+          <div class="form-group">
+            <%= f.label :personal_message, "Votre Message" %>
+            <%= f.text_area :personal_message, class: "form-control" %>
+          </div>
+          <%= f.submit "Envoyer la Réservation", class: "btn btn-success mt-3" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

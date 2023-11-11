@@ -1,0 +1,22 @@
+<table class="table table-striped table-bordered mt-3">
+        <thead>
+          <tr>
+            <th>Date de Réservation</th>
+            <th>Client</th>
+            <th>Monster</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @bookings.each do |booking| %>
+            <tr>
+              <td><%= booking.created_at %></td>
+              <td><%= booking.user.first_name %></td>
+              <td><%= booking.monster.name %></td>
+              <td>
+                  <%= booking.approved ? "Approuver" : (booking.approved == false ? "Refuser" : render("modal", booking: booking)) %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>

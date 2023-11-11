@@ -12,7 +12,10 @@ class BookingsController < ApplicationController
 
     @monster = Monster.find(params[:booking][:monster_id])
     @booking = Booking.new(user: @user, monster: @monster)
+    personal_message = params[:booking][:personal_message]
+
     if @booking.save
+      MonsterMailer.reservation_email(current_user, @monster, personal_message).deliver_now
       redirect_to user_bookings_path, notice: "Demande de réservation créée avec succès"
     else
 
@@ -26,18 +29,21 @@ class BookingsController < ApplicationController
 
   def index
     @user = current_user
-    @bookings = Booking.all
+    @bookings = Booking.order(created_at: :desc).page(params[:page]).per(10)
+
   end
 
   def edit
-    # The before_action :find_booking already finds the booking, so you don't need to find it again here.
     @user = @booking.user
     @monster = @booking.monster
   end
 
   def update
     if @booking.update(booking_params)
-      redirect_to user_bookings_path
+      if @booking.approved?
+        MonsterMailer.booking_confirmation_email(@booking.user, @booking.monster).deliver_now
+      end
+      redirect_to user_bookings_path, notice: "Demande de réservation mise à jour avec succès"
     else
       render :edit
     end
