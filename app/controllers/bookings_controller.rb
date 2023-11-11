@@ -33,7 +33,6 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    # The before_action :find_booking already finds the booking, so you don't need to find it again here.
     @user = @booking.user
     @monster = @booking.monster
   end
