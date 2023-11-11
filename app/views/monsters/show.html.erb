@@ -1,6 +1,7 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-6">
+
       <img class="monster-image img-fluid"
         src="<%= cl_image_path @monster.photo.key, width: 1000, height: 600, crop: :pad %>" alt="Monster Image">
     </div>
@@ -8,6 +9,7 @@
       <div class="d-flex flex-column justify-content-end h-100">
         <h1 class="monster-title fw-bolder"><%= @monster.name %></h1>
         <p class="monster-description fw-bold"><%= @monster.description %></p>
+
         <p class="monster-price fw-bold">Prix: <%= @monster.price %>$ par semaine</p>
         <div class="book-button mt-3">
           <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#emailModal">Réservation</button>
@@ -26,9 +28,47 @@
 
           </div>
 
+       <p class="monster-price fw-bold">Price: <%= @monster.price %>$ per week</p>
+
+        <h2 class="monster-reviews-title fw-bold">Reviews</h2>
+        <% if @monster.review_text.present? %>
+          <p class="monster-review-text fw-bold">Review: <%= @monster.review_text %></p>
+        <% else %>
+          <p class="no-reviews-message">No reviews yet.</p>
+  
+        <% end %>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
 <%= render 'email_modal' %>
+              
+              <div data-controller="review" class="container mt-3">
+  <div class="row">
+    <div class="col-md-6">
+          <button class="btn btn-primary" id="show-review-form" data-action="click->review#toggle">Add Reviews</button>
+      <%= form_for @booking, url: user_new_booking_path(@user), method: :post, class: "needs-validation" do |f| %>
+        <%= f.hidden_field :monster_id, value: @monster.id %>
+        <%= f.submit "Reservation", class: "btn btn-success", data: { turbo_confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>
+    <div data-review-target="AddReview" class="col-md-6 d-none">
+      <%= form_for @monster, url: custom_create_review_monster_path(@monster), method: :post, class: "needs-validation" do |f| %>
+        <%= f.hidden_field :monster_id, value: @monster.id %>
+        <div class="form-group">
+          <%= f.label :rating, "Rating" %>
+          <%= f.number_field :rating, class: "form-control small-input", min: 1, max: 5 %>
+        </div>
+        <div class="form-group">
+          <%= f.label :review_text, "Review Text" %>
+          <%= f.text_area :review_text, class: "form-control", rows: 4 %>
+        </div>
+        <%= f.submit "Submit Review", class: "btn btn-primary", data: { turbo_confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

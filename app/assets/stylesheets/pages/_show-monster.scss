@@ -1,34 +1,56 @@
+.container {
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
 .monster-image {
   width: 100%;
   height: auto;
   max-height: 600px;
+
   box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+
   border-radius: 10px;
 }
 
 .monster-title {
   font-size: 36px;
-  color: black;
+  color: black; /* Couleur du texte modifiée */
   margin-bottom: 10px;
 }
 
 .monster-description {
   font-size: 18px;
-  color: black;
+  color: black; /* Couleur du texte modifiée */
   margin-bottom: 10px;
 }
 
 .monster-price {
   font-size: 24px;
-  color: black;
+  color: black; /* Couleur du texte modifiée */
   margin-bottom: 10px;
 }
 
-.book-button {
-  margin-top: auto;
+.monster-reviews-title {
+  font-size: 24px;
+  color: black; /* Couleur du texte modifiée */
+  margin-top: 20px;
 }
 
-.book-button input[type="submit"] {
+.monster-review-text {
+  font-size: 18px;
+  color: black; /* Couleur du texte modifiée */
+  margin-bottom: 10px;
+}
+
+.no-reviews-message {
+  font-size: 18px;
+  color: black; /* Couleur du texte modifiée */
+  margin-bottom: 10px;
+}
+
+.btn-reservation,
+.btn-add-review {
   display: inline-block;
   padding: 10px 20px;
   color: #fff;
@@ -37,11 +59,18 @@
   font-size: 18px;
   transition: background-color 0.3s ease;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: #800;
 }
 
-.book-button input[type="submit"]:hover {
-  background-color: #800;
+.btn-reservation:hover,
+.btn-add-review:hover {
+  background-color: #600;
+}
+
+.form-control {
+  font-size: 14px;
+  padding: 8px 12px;
 }
 
 .custom-button {
