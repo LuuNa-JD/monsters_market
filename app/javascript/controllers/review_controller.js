@@ -3,11 +3,17 @@ import { Controller } from "@hotwired/stimulus"
 
 
 export default class extends Controller {
-  static target = ["AddReviewTarget"];
-  connect() {
-    console.log("salut")
-    console.log(this.AddReviewTarget);
+  static targets = ["AddReview"];
+  // connect(){
+
+  //   console.log(this.AddReviewTarget);
+  // }
+
+  toggle() {
+    this.AddReviewTarget.classList.toggle("d-none");
+    // console.log(this.AddReviewTarget)
   }
+
   // // static targets = ["form"];
 
   // // toggleForm() {

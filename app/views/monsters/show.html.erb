@@ -15,23 +15,24 @@
         <% else %>
           <p class="no-reviews-message">No reviews yet.</p>
   #Bouton de création
-          <button class="btn btn-primary" id="show-review-form" data-controller="review" data-action="click->review#toggleForm">Add Reviews</button>
         <% end %>
       </div>
     </div>
   </div>
 </div>
 
+
 <div data-controller="review" class="container mt-3">
   <div class="row">
     <div class="col-md-6">
+          <button class="btn btn-primary" id="show-review-form" data-action="click->review#toggle">Add Reviews</button>
       <%= form_for @booking, url: user_new_booking_path(@user), method: :post, class: "needs-validation" do |f| %>
         <%= f.hidden_field :monster_id, value: @monster.id %>
         <%= f.submit "Reservation", class: "btn btn-success", data: { turbo_confirm: 'Are you sure?' } %>
       <% end %>
     </div>
     <div data-review-target="AddReview" class="col-md-6 d-none">
-      <%= form_for @monster, url: custom_create_review_monster_path(@monster), method: :post, class: "needs-validation", data: { controller: "review" } do |f| %>
+      <%= form_for @monster, url: custom_create_review_monster_path(@monster), method: :post, class: "needs-validation" do |f| %>
         <%= f.hidden_field :monster_id, value: @monster.id %>
         <div class="form-group">
           <%= f.label :rating, "Rating" %>
