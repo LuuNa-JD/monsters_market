@@ -13,6 +13,8 @@ class MonstersController < ApplicationController
     @user = current_user
     @monster = Monster.find(params[:id])
     @booking = Booking.new(user: @user, monster: @monster)
+    @reviews = Review.all
+    @review = Review.new
   end
 
   def create_review
@@ -74,8 +76,8 @@ class MonstersController < ApplicationController
     params.require(:monster).permit(:name, :description, :price, :photo)
   end
 
-  def review_params
-    params.require(:review).permit(:rating, :review_text)
+  def reviews_params
+    params.require(:review).permit(:rating, :content)
   end
 
   def find_vendor?

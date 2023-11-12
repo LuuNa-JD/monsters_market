@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :monsters, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
-    post "create_review", on: :member, as: "custom_create_review"
+    resources :reviews, only: [:new, :create]
   end
   resources :users do
     resources :monsters, only: [:new, :create]
