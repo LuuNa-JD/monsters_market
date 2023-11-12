@@ -28,11 +28,11 @@
 
           </div>
 
-        <h2 class="monster-reviews-title fw-bold">Reviews</h2>
+        <h2 class="monster-reviews-title fw-bold">Commentaires</h2>
         <% if @monster.review_text.present? %>
           <p class="monster-review-text fw-bold">Review: <%= @monster.review_text %></p>
         <% else %>
-          <p class="no-reviews-message">No reviews yet.</p>
+          <p class="no-reviews-message">Pas encore de commentaires.</p>
 
         <% end %>
         </div>
@@ -44,23 +44,26 @@
 
 <%= render 'email_modal' %>
 
-              <div data-controller="review" class="container mt-3">
+<div data-controller="review" class="container mt-3">
   <div class="row">
     <div class="col-md-6">
-          <button class="btn btn-primary" id="show-review-form" data-action="click->review#toggle">Add Reviews</button>
+      <button class="btn btn-add-review" id="show-review-form" data-action="click->review#toggle">Ajouter un commentaire</button>
     </div>
-    <div data-review-target="AddReview" class="col-md-6 d-none">
+    <div data-review-target="AddReview" class="review-form col-md-6 d-none">
       <%= form_for @monster, url: custom_create_review_monster_path(@monster), method: :post, class: "needs-validation" do |f| %>
         <%= f.hidden_field :monster_id, value: @monster.id %>
+
         <div class="form-group">
-          <%= f.label :rating, "Rating" %>
+          <%= f.label :rating, "Note (/5)", class: "form-label rating-label" %>
           <%= f.number_field :rating, class: "form-control small-input", min: 1, max: 5 %>
         </div>
+
         <div class="form-group">
-          <%= f.label :review_text, "Review Text" %>
+          <%= f.label :review_text, "Commentaire", class: "form-label" %>
           <%= f.text_area :review_text, class: "form-control", rows: 4 %>
         </div>
-        <%= f.submit "Submit Review", class: "btn btn-primary", data: { turbo_confirm: 'Are you sure?' } %>
+
+        <%= f.submit "Valider le commentaire", class: "btn submit-button", data: { turbo_confirm: 'Are you sure?' } %>
       <% end %>
     </div>
   </div>
